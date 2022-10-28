@@ -6,83 +6,165 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView visual;
-    Button bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,bt0,btM,btR,btC,btS,btT,btD;
-    public int calculando;
-    public int paranumros;
+
+     float numero1=0.0f;
+     float numer02=0.0f;
+     String operacion="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         visual=findViewById(R.id.tvResultado);
-        bt1=findViewById(R.id.bt1);
-        bt2=findViewById(R.id.bt2);
-        bt3=findViewById(R.id.bt3);
-        bt4=findViewById(R.id.bt4);
-        bt5=findViewById(R.id.bt5);
-        bt6=findViewById(R.id.bt6);
-        bt7=findViewById(R.id.bt7);
-        bt8=findViewById(R.id.bt8);
-        bt9=findViewById(R.id.bt9);
-        bt0=findViewById(R.id.bt0);
-        btM=findViewById(R.id.btmultiplicación);
-        btR=findViewById(R.id.btresta);
-        btC=findViewById(R.id.btC);
-        btS=findViewById(R.id.btsuma);
-        btT=findViewById(R.id.btTanto);
-        btD=findViewById(R.id.btdivision);
-
-
-        btR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calculando =Integer.valueOf(visual.getText().toString());
-
-                visual.setText(calculando);
-            }
-        });
-
-        btS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        btC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        btT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        btM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        btD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
     }
-
-    public void suma(){
-
+    public  void  Escribir0(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor== 0.0f){
+            visual.setText("0");
+        }else{
+            visual.setText(visual.getText()+"0");
+        }
+    }
+    public  void  Escribir1(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("1");
+        }else{
+            visual.setText(visual.getText()+"1");
+        }
+    }
+    public  void  Escribir2(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("2");
+        }else{
+            visual.setText(visual.getText()+"2");
+        }
+    }
+    public  void  Escribir3(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("3");
+        }else{
+            visual.setText(visual.getText()+"3");
+        }
+    }
+    public  void  Escribir4(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("4");
+        }else{
+            visual.setText(visual.getText()+"4");
+        }
+    }
+    public  void  Escribir5(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("5");
+        }else{
+            visual.setText(visual.getText()+"5");
+        }
+    }
+    public  void  Escribir6(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("6");
+        }else{
+            visual.setText(visual.getText()+"6");
+        }
+    }
+    public  void  Escribir7(View view){
+       float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("7");
+        }else{
+            visual.setText(visual.getText()+"7");
+        }
+    }
+    public  void  Escribir8(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("8");
+        }else{
+            visual.setText(visual.getText()+"8");
+        }
+    }
+    public  void  Escribir9(View view){
+        float valor =Float.parseFloat(visual.getText().toString());
+        if(valor == 0.0f){
+            visual.setText("9");
+        }else{
+            visual.setText(visual.getText()+"9");
+        }
     }
 
+    public void LimpiaTodo(View view) {
+        visual.setText("0");
+        numero1=0.0f;
+        numer02=0.0f;
+        operacion="";
+    }
+    public  void OperacionD(View view){
+        numero1 =Float.parseFloat(visual.getText().toString());
+        operacion="/";
+        visual.setText("0");
+
+    }
+    public  void OperacionM(View view){
+        numero1 =Float.parseFloat(visual.getText().toString());
+        operacion="*";
+        visual.setText("0");
+
+    }
+    public  void OperacionR(View view){
+        numero1 =Float.parseFloat(visual.getText().toString());
+        operacion="-";
+        visual.setText("0");
+
+    }
+    public  void OperacionS(View view){
+        numero1 =Float.parseFloat(visual.getText().toString());
+        operacion="+";
+        visual.setText("0");
+
+    }
+    public  void Resultado(View view){
+        numer02 =Float.parseFloat(visual.getText().toString());
+
+        if(operacion =="/") {
+
+            if (numer02 == 0.0f) {
+                visual.setText("0");
+                Toast.makeText(this, "OPERACION NO VALIDA", Toast.LENGTH_LONG).show();
+            } else {
+                float result = numero1 / numer02;
+                visual.setText(result + "");
+
+            }
+        }else{if(operacion =="*") {
+
+            float result = numero1 * numer02;
+            visual.setText(result + "");
+            }else{
+            if(operacion=="+"){
+               float  result=numero1+numer02;
+                visual.setText(result+"");
+            }else {
+                if(operacion=="-"){
+                 float    result=numero1-numer02;
+                    visual.setText(result+"");
+                }
+            }
+        }
+
+
+        }
+    numero1=0.0f;
+        numer02=0.0f;
+        operacion="";
+    }
 }
